@@ -1,4 +1,4 @@
-package agents;
+package modelos;
 
 public class Movimiento {
 

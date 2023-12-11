@@ -1,13 +1,24 @@
-package agents;
+package modelos;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EstadoDelJuego {
 
     private int[][] tablero;
     private int jugador;
+    private int sumaHorizontal = 0;
+    private int sumaVertical = 0;
+    private int sumaDiagonalPrincipal = 0;
+    private int sumaDiagonalSecundaria = 0;
 
     public EstadoDelJuego() {
         this.tablero = new int[3][3];
         this.jugador = 1;
+    }
+    
+    public void actualizar(String query){
+        
     }
 
     public int[][] getTablero() {
@@ -41,10 +52,6 @@ public class EstadoDelJuego {
     }
 
     public int evaluar() {
-        int sumaHorizontal = 0;
-        int sumaVertical = 0;
-        int sumaDiagonalPrincipal = 0;
-        int sumaDiagonalSecundaria = 0;
 
         for (int i = 0; i < 3; i++) {
             sumaHorizontal += tablero[i][0] + tablero[i][1] + tablero[i][2];
@@ -106,3 +113,7 @@ public class EstadoDelJuego {
                 }
             }
         }
+
+        return movimientos;
+    }
+}
